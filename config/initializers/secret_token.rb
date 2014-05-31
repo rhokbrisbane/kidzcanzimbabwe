@@ -9,5 +9,5 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Concierge::Application.config.secret_key_base = ENV['DEVISE_SECRET_KEYFixed']
+Concierge::Application.config.secret_key_base = ENV['DEVISE_SECRET_KEY']
 
