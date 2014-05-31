@@ -48,7 +48,7 @@
       .container
         - if user_signed_in?
           = link_to 'All Resources', resources_path, class: "icon-resource" if can? :read, Resource
-          = link_to 'All Tags', tags_path, class: "icon-tag" if can? :read, Tag
+          = #link_to 'All Tags', tags_path, class: "icon-tag" if can? :read, Tag
 
         - if @pages.any?
           %hr
