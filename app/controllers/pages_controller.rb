@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
-  load_and_authorize_resource
+  load_and_authorize_resource except: :show
 
-  skip_before_filter :authenticate_user!,  only: [:show]
+  skip_before_filter :authenticate_admin_user!,  only: [:show]
   skip_before_filter :check_authorization, only: [:show]
 
   def index
@@ -9,6 +9,7 @@ class PagesController < ApplicationController
   end
 
   def show
+    redirect_to resources_path and return if request.path == root_path && current_user
     @public = true
     @page = Page.find(params[:id])
   end

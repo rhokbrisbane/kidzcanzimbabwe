@@ -1,8 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  check_authorization unless: :admin_or_devise_controller?
+  check_authorization unless: :authorized_controller?
 
-  before_filter :authenticate_user!
+  before_filter :authenticate_admin_user!
   before_filter :fetch_tags_by_category
   before_filter :fetch_pages
 
@@ -24,7 +24,8 @@ class ApplicationController < ActionController::Base
 
   def authenticate_admin_user!
     authenticate_user!
-    unless current_user.admin?
+    if current_user && !current_user.admin?
+      sign_out
       redirect_to root_url, alert: 'You cannot access that resource'
     end
   end
@@ -33,7 +34,7 @@ class ApplicationController < ActionController::Base
     redirect_to root_url, alert: exception.message
   end
 
-  def admin_or_devise_controller?
-    self.kind_of?(ActiveAdmin::BaseController) || devise_controller?
+  def authorized_controller?
+    self.kind_of?(ActiveAdmin::BaseController) || devise_controller?  || self.kind_of?(PagesController)
   end
 end

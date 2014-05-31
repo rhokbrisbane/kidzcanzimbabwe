@@ -16,14 +16,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      @address = @user.address || @user.build_address
-
-      if @address.update address_params
-        redirect_to @user, notice: 'User was successfully updated.'
-      else
-        flash.now[:alert] = @address.errors.full_messages.to_sentence
-        render action: 'edit'
-      end
+      redirect_to users_path(@user), notice: 'User was successfully updated.'
     else
       flash.now[:alert] = @user.errors.full_messages.to_sentence
       render action: 'edit'
@@ -45,7 +38,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :public)
+    params.require(:user).permit(:name, :email, :admin)
   end
 
   def address_params

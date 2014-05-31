@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Concierge::Application.load_tasks
+Kidzcanzimbabwe::Application.load_tasks
