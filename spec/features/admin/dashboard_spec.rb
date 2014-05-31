@@ -33,7 +33,7 @@ describe 'Dashboard' do
     end
 
     it 'has a welcome text' do
-      expect(page).to have_content('Welcome to Concierge - Admin page.')
+      expect(page).to have_content('Welcome to Kidzcanzimbabwe - Admin page.')
     end
 
     ['Dashboard', 'Users'].each do |menu_title|

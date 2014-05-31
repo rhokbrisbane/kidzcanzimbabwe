@@ -1,41 +1,10 @@
-# [Queensland Kids](http://www.queenslandkids.org)
 
-**[Hummingbird Connect](http://hummingbirdconnect.org)**
 
 ## What is this project?
 
-The biggest problem that **Queensland Kids** ([queenslandkids.org.au](http://www.queenslandkids.org)) and their families are facing is being able to access the services and information available to them.
-
-Our aim is to create a mobile or general web site for families allowing family to shine a beacon in the positive direction towards seeking help and finding resources. The problems today is a lot of those resources are scattered in various parts of the internet or medical services will hand you a info sheet, which may of completely irrelevant.
-
-Second challenge is how do we share the information on the site accessible and securely/confidentially to family members, emergency services, doctors, nurses and service providers.
 
 ## Who's involved in the project:
 
-* Andy Fitzsimon
-* Balinder
-* Boris S
-* Brad Parker
-* Brett
-* Bruce Stronge
-* Christpherys Alva
-* Clinton Roy
-* Dan Sowter
-* Danny Johnson
-* Erik Ecoologic
-* Homan
-* Jaya
-* Justin Douglas
-* Lucas Caton
-* Mark Dunn
-* Matt Riley
-* Neil Estandarte
-* Olivier Pichon
-* Paul Quilliam
-* Paul Tasker
-* Ricardo Bernardeli
-* Robert Dickie
-* Rowan Hogan
 
 ([http://rhokbrisbane.org](http://rhokbrisbane.org))
 
@@ -54,7 +23,7 @@ Administrators can do whatever they want. Everyone else can:
     - Add kids
         - Kids in many ways act as a saved search, but can have multiple guardians. You can add information (tags) about your child and his/her symptoms, and these will be used to generate a regular search on your child's behalf.
 - Add Resources
-    - Resources are the whole point of Concierge.
+    - Resources are the whole point of Kidzcanzimbabwe.
     - Please create lots of them, and share them with everyone.
     - You can add addresses to resources, to help people find services / information / anything near them.
     - You can tag resources, even if you didn't create them.

@@ -8,7 +8,7 @@ require 'sprockets/railtie'
 
 Bundler.require(:default, Rails.env)
 
-module Concierge
+module Kidzcanzimbabwe
   class Application < Rails::Application
     I18n.config.enforce_available_locales = true
     config.autoload_paths += %W(#{config.root}/lib)
