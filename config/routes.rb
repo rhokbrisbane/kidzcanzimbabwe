@@ -1,5 +1,4 @@
 Kidzcanzimbabwe::Application.routes.draw do
-  ActiveAdmin.routes(self)
 
   root :to => "pages#show", :id => 1
 
