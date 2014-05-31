@@ -14,7 +14,7 @@ require 'sidekiq/capistrano'
 set :normalize_asset_timestamps, false
 set :scm, :git
 set :git_enable_submodules, true
-set :repository,  "git@github.com:HollieGordon/milaana_prototype.git"
+set :repository,  "git@github.com:rhokbrisbane/kidzcanzimbabwe.git"
 ssh_options[:forward_agent] = true
 
 set :db_host, "localhost"
