@@ -5,8 +5,6 @@ set :whenever_environment, defer { stage }
 require 'capistrano/ext/multistage'
 require 'capistrano_colors'
 require 'bundler/capistrano'
-require 'whenever/capistrano'
-require 'sidekiq/capistrano'
 
 #############################################################
 # Application
@@ -25,20 +23,15 @@ set :pg_password, "uwppDkoJ27hJlmGRZVieYafdn"
 set :use_sudo, true
 set :keep_releases, 5
 
-set :whenever_command, 'bundle exec whenever'
-set :whenever_roles, [:db]
-
 default_run_options[:pty] = true
 set :runner, 'netengine'
 set :user, 'netengine'
-set :use_sudo, false
+set :use_sudo, true
 
 set :deploy_via, :remote_cache
 set :git_shallow_clone, 1
 set :copy_strategy, :export
 set :deploy_to, '/var/www/unicorn'
-
-set :sidekiq_role, :sidekiq
 
 set :assets_dependencies, %w(app/assets lib/assets vendor/assets Gemfile.lock config/routes.rb)
 
@@ -90,21 +83,6 @@ namespace :deploy do
         logger.info "Skipping asset pre-compilation because there were no asset changes"
       end
     end
-  end
-end
-
-namespace :sidekiq do
-  task :start do
-    run "/etc/init.d/sidekiq start"
-  end
-  task :restart do
-    run "/etc/init.d/sidekiq restart"
-  end
-  task :quiet do
-    sidekiq.stop
-  end
-  task :stop do
-    run "/etc/init.d/sidekiq stop"
   end
 end
 
