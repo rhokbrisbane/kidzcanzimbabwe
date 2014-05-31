@@ -185,6 +185,7 @@ GEM
     kaminari (0.15.0)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    kgio (2.8.0)
     launchy (2.4.2)
       addressable (~> 2.3)
     listen (2.4.0)
@@ -209,6 +210,7 @@ GEM
     net-ssh (2.7.0)
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
+    newrelic_rpm (3.6.8.164)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
     oauth2 (0.9.3)
@@ -274,6 +276,7 @@ GEM
       activesupport (= 4.0.2)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
+    raindrops (0.11.0)
     rake (10.1.0)
     ransack (1.1.0)
       actionpack (>= 3.0)
@@ -343,6 +346,10 @@ GEM
     uglifier (2.3.3)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unicorn (4.6.3)
+      kgio (~> 2.6)
+      rack
+      raindrops (~> 0.7)
     uniform_notifier (1.4.0)
     warden (1.2.3)
       rack (>= 1.0)
@@ -380,6 +387,7 @@ DEPENDENCIES
   jquery-tablesorter
   jquery-turbolinks
   launchy
+  newrelic_rpm
   omniauth-facebook
   paperclip
   pg
@@ -397,3 +405,4 @@ DEPENDENCIES
   thin
   turbolinks
   uglifier (>= 1.3.0)
+  unicorn

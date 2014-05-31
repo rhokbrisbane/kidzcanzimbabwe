@@ -54,3 +54,8 @@ group :test do
   gem 'spring'
   gem 'spring-commands-rspec', require: false
 end
+
+group :production, :staging do
+  gem 'newrelic_rpm'
+  gem 'unicorn'
+end
