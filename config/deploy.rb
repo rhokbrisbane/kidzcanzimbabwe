@@ -26,7 +26,7 @@ set :keep_releases, 5
 default_run_options[:pty] = true
 set :runner, 'netengine'
 set :user, 'netengine'
-set :use_sudo, true
+set :use_sudo, false
 
 set :deploy_via, :remote_cache
 set :git_shallow_clone, 1
@@ -91,8 +91,8 @@ namespace :symlink do
     run "ln -nfs #{deploy_to}/#{shared_dir}/config/database.yml #{release_path}/config/database.yml"
   end
 
-  task :braintree, :roles => :app do
-    run "ln -nfs #{deploy_to}/#{shared_dir}/config/braintree.yml #{release_path}/config/braintree.yml"
+  task :application_configs, :roles => :app do
+    run "ln -nfs #{deploy_to}/#{shared_dir}/.env #{release_path}/.env"
   end
 
   task :assets, :roles => :app do
@@ -101,7 +101,7 @@ namespace :symlink do
 
   task :all, :roles => :app do
     database
-    braintree
+    application_configs
     assets
   end
 end
