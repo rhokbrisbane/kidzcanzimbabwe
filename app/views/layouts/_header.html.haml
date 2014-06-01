@@ -1,5 +1,5 @@
 .container
-  = link_to image_tag('logo-header.jpg'), user_signed_in? ? patients_path : root_path, class: 'logo', title: 'Kidzcan Zim'
+  = link_to image_tag('logo.png'), user_signed_in? ? patients_path : root_path, class: 'logo', title: 'Kidzcan Zim'
 
   %hgroup.user-actions
     - if user_signed_in?

@@ -1,15 +1,15 @@
 $header-height: $line-height * 2;
 
 body > header {
-  background-color: $green;
+  background-color: $orange;
   z-index: $second-top-layer;
   padding: 0;
 
   a, .label {
     float: left;
     padding: 0 .5em;
-    border-left: thin solid lighten($green, 10%);
-    border-right: thin solid lighten($green, 10%);
+    border-left: thin solid lighten($orange, 10%);
+    border-right: thin solid lighten($orange, 10%);
 
     + a {
       border-left-width: 0;
@@ -45,6 +45,12 @@ body > header {
     .logo {
       width: $header-height;
       overflow: hidden;
+
+      img {
+        height: auto !important;
+        width: 100%;
+        margin: .5em 0;
+      }
     }
 
     .user-actions .label {

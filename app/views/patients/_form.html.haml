@@ -10,10 +10,10 @@
     = f.text_field :sex
 
     = f.label :date_of_birth
-    = f.text_field :date_of_birth
+    = f.date_field :date_of_birth
 
     = f.label :date_of_death
-    = f.text_field :date_of_death
+    = f.date_field :date_of_death
 
     = f.label :kidzcan_number
     = f.text_field :kidzcan_number
@@ -28,8 +28,25 @@
     = f.text_area :point_of_contact
 
     = f.label :mobile_number
-    = f.text_area :mobile_number
+    = f.text_field :mobile_number
 
+    = fields_for :address, @address do |a|
+      .field
+        = a.label :street1, 'Street'
+        = a.text_field :street1
+
+      .fields
+        .field.one-third
+          = a.label :suburb
+          = a.text_field :suburb
+
+        .field.one-third
+          = a.label :state
+          = a.text_field :state
+
+        .field.one-third
+          = a.label :country
+          = a.text_field :country
 
   .submit
     = f.submit 'Save'
