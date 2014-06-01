@@ -1,0 +1,7 @@
+= form_for @patient, html: { multipart: true } do |f|
+  .field
+    = f.label :firstname
+    = f.text_field :firstname
+
+  .submit
+    = f.submit 'Save'
