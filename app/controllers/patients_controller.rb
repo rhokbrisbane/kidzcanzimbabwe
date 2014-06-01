@@ -17,8 +17,18 @@ class PatientsController < ApplicationController
   end
 
   def edit
+    @patient = Patient.find(params[:id])
+    authorize! :manage, @patient
   end
 
   def update
+    
   end
+
+  private
+
+  def patient_params
+    params.require(:patient).permit(:firstname)
+  end
+
 end
