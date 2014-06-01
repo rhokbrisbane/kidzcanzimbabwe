@@ -1,5 +1,8 @@
 = render 'patients/header'
 
+= form_tag patients_path, method: 'get' do |f|
+  = search_field_tag :q, params[:q], autofocus: true, placeholder: 'Search'
+
 - if @patients.any?
   %table
     %thead

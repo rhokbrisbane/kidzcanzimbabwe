@@ -2,7 +2,11 @@ class PatientsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @patients = @patients.order('patients.lastname')
+    if params[:q].present?
+      @patients.where!("firstname ILIKE ? OR lastname ILIKE ?", "%#{params[:q]}%", "%#{params[:q]}%")
+    end
+
+    @patients.order!('patients.lastname')
   end
 
   def csv
