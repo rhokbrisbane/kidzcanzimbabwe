@@ -13,10 +13,13 @@ class PatientsController < ApplicationController
     file = "#{Rails.root}/tmp/patients_#{Time.now.to_i}.csv"
 
     CSV.open(file, 'w') do |csv|
-      csv << %w(id kidzcan_number hospital_ref_number firstname lastname sex date_of_birth date_of_death kidzcan_registration mobile_number status point_of_contact diagnosis created_at updated_at)
+      csv << %w(id kidzcan_number hospital_ref_number firstname lastname sex date_of_birth date_of_death kidzcan_registration mobile_number status point_of_contact diagnosis address_suburb address_postcode address_street1 address_street2 address_state address_country)
 
       @patients.each do |patient|
-        csv << patient.slice(:id, :kidzcan_number, :hospital_ref_number, :firstname, :lastname, :sex, :date_of_birth, :date_of_death, :kidzcan_registration, :mobile_number, :status, :point_of_contact, :diagnosis, :created_at, :updated_at).values
+        patient_details = patient.slice(:id, :kidzcan_number, :hospital_ref_number, :firstname, :lastname, :sex, :date_of_birth, :date_of_death, :kidzcan_registration, :mobile_number, :status, :point_of_contact, :diagnosis).values
+        parient_address = @patients.first.address.slice(:suburb, :postcode, :street1, :street2, :state, :country).values
+
+        csv << (patient_details + parient_address)
       end
     end
 
