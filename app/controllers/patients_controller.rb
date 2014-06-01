@@ -1,13 +1,13 @@
 class PatientsController < ApplicationController
-  
+  load_and_authorize_resource
+
   def index
-    authorize! :read, @patients
-    @patients = Patient.all
+  end
+
+  def edit
   end
 
   def show
-    authorize! :read, @patient
-    @patient = Patient.find(params[:id])
   end
 
   def new
@@ -16,26 +16,12 @@ class PatientsController < ApplicationController
   def create
   end
 
-  def edit
-    authorize! :manage, @patient
-    @patient = Patient.find(params[:id])
-  end
-
   def update
-    authorize! :manage, @patient
-    respond_to do |format|
-      format.html do
-        if @patient.update(patient_params)
-          redirect_to @patient, notice: "#{@patient.firstname}'s details have been saved."
-        else
-          render action: 'new'
-        end
-      end
-
-      format.json do
-        @patient.update(patient_params)
-        render json: @patient.to_json
-      end
+    if @patient.update(patient_params)# && @address.update(address_params)
+      redirect_to @patient, notice: 'Patient was successfully updated.'
+    else
+      flash.now[:alert] = @patient.errors.full_messages.to_sentence
+      render action: 'edit'
     end
   end
 
