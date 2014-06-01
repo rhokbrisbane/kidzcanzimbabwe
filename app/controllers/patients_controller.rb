@@ -2,7 +2,7 @@ class PatientsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @patients = @patients.order('patients.lastname')
+    @patients = @patients.order('LOWER(lastname)')
   end
 
   def edit
