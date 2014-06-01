@@ -34,6 +34,40 @@ Administrators can do whatever they want. Everyone else can:
 
 > If someone else made something, and hasn't shared it with you, or a group you're in, you can't see it.
 
+#Plan
+
+must do:
+create / manage patients (patients)
+need to access patient data offline (offline)
+need to create new patients (patients)
+need to manage existing patients (patients)
+need to remove deceased patients (patients)
+need to export my expenditure per region/ patient/ condition (reporting)
+
+should do:
+produce / export reports (reporting)
+provide offline continuity (offline)
+need to manage patients offline (offline)
+need to upload offline data dependent on “manage patients offline” (offline)
+need to export patient locations (reporting)
+need to send SMS at predefined times (SMS)
+ batch trigger
+based on patient data
+need to paginated sort of patients (UX/UI)
+need simplified starting points (UX/UI)
+add, search, report, admin
+
+could do:
+simplify workflow (UX/UI)
+produce SMS reminders (SMS)
+need to create patients offline (offline)
+need to assign a user to a patient (patients)
+user can sign up independently
+need to add datafiles as required (patients)
+
+
+
+
 ## Servers
 
 ### Development
