@@ -1,2 +1,18 @@
-%h1 Patients#show
-%p Find me in app/views/patients/show.html.haml
+%h1 Patient Record
+
+%h2= "#{@patient.firstname} #{@patient.lastname}"
+%p= "Sex: #{@patient.sex}"
+%p= "Date of Birth: #{@patient.date_of_birth}"
+- if @patient.date_of_death
+  %p= "Date of Death: #{@patient.data_of_death}"
+
+%h3 KidzCan 
+%p= "KidzCan Number: #{@patient.kidzcan_number}"
+%p= "KidzCan Registration Date: #{@kidzcan_registration}"
+
+%h3 Diagnosis
+%p= @patient.diagnosis
+
+%h3 Contact Details
+%p= @patient.point_of_contact
+%p= "Mobile Number: #{@patient.mobile_number}"
