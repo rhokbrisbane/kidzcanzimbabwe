@@ -1,5 +1,18 @@
 ##### Users #####
 
+puts 'Creating patients...'
+
+Patient.create!({
+  kidzcan_number: "1234",
+  hospital_ref_number: "12345",
+  firstname: "John",
+  lastname: "Doe",
+  sex: "M",
+  date_of_birth: "1987-04-23",
+  kidzcan_registration: "2004-03-11"
+})
+
+
 puts 'Creating users...'
 
 users_attributes = [
