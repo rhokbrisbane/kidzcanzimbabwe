@@ -17,7 +17,7 @@ class PatientsController < ApplicationController
 
       @patients.each do |patient|
         patient_details = patient.slice(:id, :kidzcan_number, :hospital_ref_number, :firstname, :lastname, :sex, :date_of_birth, :date_of_death, :kidzcan_registration, :mobile_number, :status, :point_of_contact, :diagnosis).values
-        parient_address = @patients.first.address.slice(:suburb, :postcode, :street1, :street2, :state, :country).values
+        parient_address = patient.address.slice(:suburb, :postcode, :street1, :street2, :state, :country).values
 
         csv << (patient_details + parient_address)
       end
