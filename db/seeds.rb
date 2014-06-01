@@ -1,18 +1,3 @@
-##### Users #####
-
-puts 'Creating patients...'
-
-Patient.create!({
-  kidzcan_number: "1234",
-  hospital_ref_number: "12345",
-  firstname: "John",
-  lastname: "Doe",
-  sex: "M",
-  date_of_birth: "1987-04-23",
-  kidzcan_registration: "2004-03-11"
-})
-
-
 puts 'Creating users...'
 
 users_attributes = [
@@ -93,3 +78,18 @@ puts "Importing #{resources_attributes.count} resources, it could take a while..
 resources_attributes.each do |resource_attributes|
   Resource.where(name: resource_attributes[:name]).first || Resource.create!(resource_attributes)
 end
+
+
+##### Users #####
+
+puts 'Creating patients...'
+
+Patient.create!({
+                  kidzcan_number: "1234",
+                  hospital_ref_number: "12345",
+                  firstname: "John",
+                  lastname: "Doe",
+                  sex: "M",
+                  date_of_birth: "1987-04-23",
+                  kidzcan_registration: "2004-03-11"
+                })
