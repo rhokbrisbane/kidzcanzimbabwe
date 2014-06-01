@@ -1,15 +1,19 @@
 Kidzcanzimbabwe::Application.routes.draw do
-
-  root :to => "pages#show", :id => 1
+  root 'pages#show', id: 1
 
   devise_for :users, controllers: {
-    registrations:      'users/registrations'
+    registrations: 'users/registrations'
   }
 
-  resources :patients
-  resources :comments,  only: [:create, :destroy]
-  resources :pages, except: :landing
-  resources :users, only: [:show, :edit, :index]
+  resources :patients do
+    collection do
+      get :csv
+    end
+  end
+
+  resources :comments,            only:   [:create, :destroy]
+  resources :pages,               except: :landing
+  resources :users,               only:   [:show, :edit, :index]
   resources :resource_categories, except: :destroy
 
   resources :resources do

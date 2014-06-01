@@ -3,8 +3,8 @@
 puts 'Creating users...'
 
 users_attributes = [
-  { name: "Admin User", email: 'admin@example.com', password: 'rhok2013', admin: true },
-  { name: "Example User", email: 'user@example.com',  password: 'rhok2013', admin: false },
+  { name: "Admin User", email: 'admin@example.com', password: 'rhok2014', admin: true },
+  { name: "Example User", email: 'user@example.com',  password: 'rhok2014', admin: false },
 ]
 
 users = []

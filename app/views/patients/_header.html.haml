@@ -4,4 +4,4 @@
 - if can? :create, Patient
   = content_for :actions do
     = link_to 'New patient', new_patient_path, class: 'button icon-plus'
-
+    = link_to 'Export to CSV', csv_patients_path, class: 'button'

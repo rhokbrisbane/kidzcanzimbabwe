@@ -10,4 +10,3 @@
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
 Kidzcanzimbabwe::Application.config.secret_key_base = ENV['DEVISE_SECRET_KEY']
-

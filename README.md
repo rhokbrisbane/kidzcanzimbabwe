@@ -1,4 +1,3 @@
-
 ## What is this project?
 - Kidzcan Hub was built for Kizcanzimbabwe.org as a project for RHoKBrisbane.org
 - It seeks to solve their decentralised data problem, whilst assiting them to manage their patients records, resource directory, and to create compelling reports to assist in thir fundraising.
@@ -62,7 +61,6 @@ could do:
 - user can sign up independently
 - need to add datafiles as required (patients)
 
-
 ## Servers
 
 ### Development
@@ -80,4 +78,3 @@ Start the server passing the Facebook credentials (the length below is correct, 
     export HH_DEVISE_SECRET_KEY=62caa77c37f8e92d7562e06427766ce1a8e71d7c92f2ce26e46a6f3f035f6a0f197a4be64a33483d79b39d7c675c4ecfc39bbcc12d9631b084e2fc16a4fff18e
     export DEVISE_SECRET_KEY=54e42d09f9198aad975e6d504dbf436483bc032311f6ed55735273ce9910f245ed220badddde98cd1926ee02c7e75fad15ac657e5953706fc898622aee8ffcb0
     rails s
-        
