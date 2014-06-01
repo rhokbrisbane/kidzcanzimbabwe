@@ -6,6 +6,8 @@ class PatientsController < ApplicationController
   end
 
   def show
+    authorize! :read, @patient
+    @patient = Patient.find(params[:id])
   end
 
   def new

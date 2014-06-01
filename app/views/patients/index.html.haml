@@ -7,12 +7,14 @@
       %tr
         %th Last Name
         %th First Name
+        %th &nbsp;
  
 
     - @patients.each do |patient|
       %tr
         %td= patient.firstname
         %td= patient.lastname
+        %td= link_to 'show', patient_path(patient), class: 'button'
        
 - else
   %p There are no resources in this category.
