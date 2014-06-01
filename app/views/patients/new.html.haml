@@ -1,2 +1,6 @@
-%h1 Patients#new
-%p Find me in app/views/patients/new.html.haml
+= content_for :title, 'Creating Patient Record'
+
+= render 'form'
+
+.main-footer
+  = link_to 'Back', patients_path

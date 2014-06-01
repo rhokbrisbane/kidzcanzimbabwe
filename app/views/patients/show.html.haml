@@ -1,4 +1,5 @@
-%h1 Patient Record
+= content_for :title, "Patient Record"
+= content_for :title_icon, 'icon-spreadsheet'
 
 %h2= "#{@patient.firstname} #{@patient.lastname}"
 %p= "Sex: #{@patient.sex}"
