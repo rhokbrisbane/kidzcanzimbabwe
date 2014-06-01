@@ -7,8 +7,8 @@ defaults: &defaults
 
 development:
   <<: *defaults
-  database: rhok_brisbane_2013_development
+  database: kidzcanzimbabwe_development
 
 test:
   <<: *defaults
-  database: rhok_brisbane_2013_test
+  database: kidzcanzimbabwe_test

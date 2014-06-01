@@ -1,10 +1,6 @@
-
-
 ## What is this project?
 
-
 ## Who's involved in the project:
-
 
 ([http://rhokbrisbane.org](http://rhokbrisbane.org))
 
