@@ -14,11 +14,12 @@
 
     - @patients.each do |patient|
       %tr
-        %td= patient.firstname
         %td= patient.lastname
+        %td= patient.firstname
         %td
           = link_to 'show', patient_path(patient), class: 'button'
           = link_to 'edit', edit_patient_path(patient), class: 'button'
+          = link_to 'Delete', patient, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 - else
   %p There are no resources in this category.

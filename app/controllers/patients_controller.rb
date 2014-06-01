@@ -6,7 +6,7 @@ class PatientsController < ApplicationController
       @patients.where!("firstname ILIKE ? OR lastname ILIKE ?", "%#{params[:q]}%", "%#{params[:q]}%")
     end
 
-    @patients.order!('patients.lastname')
+    @patients.order!('LOWER(lastname)')
   end
 
   def csv
@@ -54,6 +54,11 @@ class PatientsController < ApplicationController
       flash.now[:alert] = @patient.errors.full_messages.to_sentence
       render action: 'edit'
     end
+  end
+
+  def destroy
+    @patient.destroy
+    redirect_to patients_path
   end
 
   private
