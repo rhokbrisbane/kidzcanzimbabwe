@@ -1,5 +1,4 @@
-
-%h3= @patients
+= render 'patients/header'
 
 - if @patients.any?
   %table
@@ -7,14 +6,14 @@
       %tr
         %th Last Name
         %th First Name
-        %th &nbsp;
- 
+        %th Actions
+
 
     - @patients.each do |patient|
       %tr
         %td= patient.firstname
         %td= patient.lastname
         %td= link_to 'show', patient_path(patient), class: 'button'
-       
+
 - else
   %p There are no resources in this category.
