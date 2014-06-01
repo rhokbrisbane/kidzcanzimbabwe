@@ -1,2 +1,7 @@
-%h1 Patients#edit
-%p Find me in app/views/patients/edit.html.haml
+
+= content_for :title, 'Editing Patient Record'
+
+= render 'form'
+
+.main-footer
+  = link_to 'Back', patients_path
