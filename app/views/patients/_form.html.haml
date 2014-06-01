@@ -7,7 +7,7 @@
     = f.text_field :lastname
 
     = f.label :sex
-    = f.text_field :sex
+    = select(:patient, :sex, options_for_select([["Male", "M"], ["Female", "F"]]))
 
     = f.label :date_of_birth
     = f.date_field :date_of_birth
