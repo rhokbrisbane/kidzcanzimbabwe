@@ -17,4 +17,10 @@
 %h3 Contact Details
 %p= @patient.point_of_contact
 %p= "Mobile Number: #{@patient.mobile_number}"
-%p= "Address: #{@patient.address}"
+
+%h4 Address
+%p= @patient.address.street1
+%p= @patient.address.street2
+%p= @patient.address.suburb
+%p= @patient.address.state
+
