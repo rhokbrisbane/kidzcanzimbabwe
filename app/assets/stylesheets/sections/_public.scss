@@ -1,6 +1,5 @@
 .public {
-  background: desaturate(darken($green, 10%), 10%) image-url("blurry.jpg") no-repeat center;
-  @include background-size(cover);
+  background: $blue;
 
   %heading { line-height: $line-height; }
 
@@ -65,7 +64,7 @@
     a {
       color: white !important;
 
-      &.active { color: $green !important; }
+      &.active { color: $orange !important; }
     }
   }
 }
