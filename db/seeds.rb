@@ -1,30 +1,5 @@
 ##### Users #####
 
-puts 'Creating patients...'
-
-Patient.create!({
-  kidzcan_number: "1234",
-  hospital_ref_number: "12345",
-  firstname: "John",
-  lastname: "Doe",
-  sex: "M",
-  date_of_birth: "1987-04-23",
-  kidzcan_registration: "2004-03-11"
-})
-
-Patient.create!({
-  kidzcan_number: "123467",
-  hospital_ref_number: "12345887",
-  firstname: "Jane",
-  lastname: "Smith",
-  sex: "F",
-  date_of_birth: "1997-04-23",
-  date_of_death: "2014-05-02",
-  kidzcan_registration: "2004-03-11",
-  point_of_contact: "Morbi quis enim eget lectus suscipit rutrum.",
-  diagnosis: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nulla lectus, volutpat quis justo auctor."
-})
-
 puts 'Creating users...'
 
 users_attributes = [
@@ -105,3 +80,31 @@ puts "Importing #{resources_attributes.count} resources, it could take a while..
 resources_attributes.each do |resource_attributes|
   Resource.where(name: resource_attributes[:name]).first || Resource.create!(resource_attributes)
 end
+
+
+##### Users #####
+
+puts 'Creating patients...'
+
+Patient.create!({
+                  kidzcan_number: "1234",
+                  hospital_ref_number: "12345",
+                  firstname: "John",
+                  lastname: "Doe",
+                  sex: "M",
+                  date_of_birth: "1987-04-23",
+                  kidzcan_registration: "2004-03-11"
+                })
+
+Patient.create!({
+  kidzcan_number: "123467",
+  hospital_ref_number: "12345887",
+  firstname: "Jane",
+  lastname: "Smith",
+  sex: "F",
+  date_of_birth: "1997-04-23",
+  date_of_death: "2014-05-02",
+  kidzcan_registration: "2004-03-11",
+  point_of_contact: "Morbi quis enim eget lectus suscipit rutrum.",
+  diagnosis: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nulla lectus, volutpat quis justo auctor."
+})
