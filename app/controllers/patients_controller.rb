@@ -38,6 +38,10 @@ class PatientsController < ApplicationController
     end
   end
 
+  def destroy
+    @patient.destroy
+  end
+
   private
 
   def patient_params
