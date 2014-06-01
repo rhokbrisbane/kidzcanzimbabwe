@@ -6,7 +6,7 @@ Kidzcanzimbabwe::Application.routes.draw do
     registrations:      'users/registrations'
   }
 
-  resources :patients, only: [:show, :new, :create, :edit, :update]
+  resources :patients, only: [:index, :show, :new, :create, :edit, :update]
   resources :comments,  only: [:create, :destroy]
   resources :pages, except: :landing
   resources :users, only: [:show, :edit, :index]

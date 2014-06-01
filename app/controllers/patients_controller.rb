@@ -1,6 +1,7 @@
 class PatientsController < ApplicationController
   
   def index
+    authorize! :read, @patients
     @patients = Patient.all
   end
 

@@ -1,0 +1,18 @@
+
+%h3= @patients
+
+- if @patients.any?
+  %table
+    %thead
+      %tr
+        %th Last Name
+        %th First Name
+ 
+
+    - @patients.each do |patient|
+      %tr
+        %td= patient.firstname
+        %td= patient.lastname
+       
+- else
+  %p There are no resources in this category.
