@@ -15,6 +15,15 @@ class PatientsController < ApplicationController
   end
 
   def create
+    @patient = Patient.new patient_params
+
+    if @patient.save
+      #@patient.create_address address_params
+      redirect_to @patient, notice: 'Resource was successfully created.'
+    else
+      flash.now[:alert] = @patient.errors.full_messages.to_sentence
+      render action: 'new'
+    end
   end
 
   def update
